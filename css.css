@@ -47,7 +47,12 @@ div{
     vertical-align: middle;
     text-align: center;
     cursor: pointer;
+
 }
+.button:hover {
+    background-color: #d54d7b;
+    color: white;
+  }
 .top-right{ 
     float: right!important;
     
@@ -55,51 +60,56 @@ div{
 .name{
     position: absolute;
     top: 18%;
-    left: 15%;
+    left: 8%;
     font-size: 30;
     border: 2px solid black;
-    padding: 30px 50px;
+    padding: 50px;
     border-radius: 100px;
 }
 .bio{
     position: absolute;
     top: 15%;
-    left: 45%;
+    left: 50%;
     font-size: 18;
     background-color: pink;
-    padding-right: 120px;
+    padding-right: 70px;
     padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
+    padding-bottom: 5px;
+    padding-left: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .sections{
     position: absolute;
     top: 40%;
     width: 96%;
-    
-    padding: 15px; 
+    padding: 15px;
 }
 .category{
     padding: 10px;
     text-decoration: none;
     color: black;
-  
 }
 .section1{
     float: left;
-    width: 32%;
+    width: 26%;
     background-color: #E6E6FA;
     padding: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 20px; 
 }
 .section2{
     float: left;
-    width: 32%;
+    width: 26%;
     background-color: lightgreen;
     padding: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 20px;
 }
 .section3{
     float: left;
-    width: 32%;
+    width: 26%;
     background-color:lightyellow;
     padding: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 20px;
 }
