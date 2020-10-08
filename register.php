@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -50,8 +51,12 @@
   <body class="text-center">
     <form class="form-signin">
   <img class="mb-4" src="./ListifyLogo.png" alt="" width="72" height="72">
-  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-  <label for="inputEmail" class="sr-only">Email Address</label>
+  <h1 class="h3 mb-3 font-weight-normal">Register Here</h1>
+  <label for="inputName" class="sr-only">Name</label>
+  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required>
+  <label for="inputEmail" class="sr-only">Username</label>
+  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required>
+  <label for="inputEmail" class="sr-only">Email</label>
   <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required>
   <br><label for="inputPassword" class="sr-only">Password</label>
   <br><input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
