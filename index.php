@@ -49,51 +49,25 @@
     <link href="css.css" rel="stylesheet">
   </head>
   <body class="text-center">
-    <form method="post" class="form-signin">
+<form action="login.php" method="post" class="form-signin">
   <img class="mb-4" src="./ListifyLogo.png" alt="" width="72" height="72">
-  <h1 class="h3 mb-3 font-weight-normal">Register Here</h1>
-  <label for="inputName" class="sr-only">Name</label><br>
-  <input type="name" class="form-control" placeholder="Name" name="name"  required><br>
-  <label for="inputName" class="sr-only">Username</label><br>
-  <input type="username" class="form-control" placeholder="Username" name="username"  required><br>
-  <label for="inputUsername" class="sr-only">Email</label><br>
-  <input type="email"  class="form-control" placeholder="Email address" name="email" required>
+  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+  <label for="inputEmail" class="sr-only">Email Address</label>
+  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" required>
   <br><label for="inputPassword" class="sr-only">Password</label>
-  <br><input type="password" class="form-control" placeholder="Password" name= "password" autocomplete= "on" required>
-      <br>
-  <button type="submit" class="btn btn-lg btn-primary btn-block" name="submit">Submit</button>
+  <br><input type="password" id="inputPassword" class="form-control" placeholder="Password" name ="password" prequired>
+  <div class="checkbox mb-3">
+    <label>
+      <input type="checkbox" value="remember-me"> Remember me
+    </label>
+  </div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit" name = "submit">Log in</button>
   <!--<p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p> -->
   <div class="links">
-  <a href="index.php">Already Have an Account? Log in Here</a>
+  <a href="register.php">Need an Account? Register Here</a>
+  <br><a href="password_reset.php">Forgot your password? Reset it </a>
   </div>
-
 </form>
 </body>
 </html>
 
-<?php
-//$conn = mysqli_connect('localhost', 'listify', '', 'general');
-require "conn.php"; 
-if(!$conn){ 
-   // echo "connection fail";
-}
-//else {echo "connection success";}
-if(isset($_POST["submit"])){ 
-    $name = $_POST["name"];
-    $username = $_POST["username"]; 
-    $email = $_POST["email"]; 
-    $password = $_POST["password"];
-    $query = "INSERT INTO login (name,username,email,password) VALUES ('$name', '$username', '$email', '$password')"; 
-    //echo $query;
-    $result = mysqli_query($conn,$query); 
-    //echo $result; 
-   
-   // if($result){ 
-     //   echo "your account has been created";
-   // }
-    //else { 
-    //    echo "sorry, there is a problem";
-   // }
-}
-
-?>
