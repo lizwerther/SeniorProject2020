@@ -6,13 +6,15 @@ session_start();
 $email = $_SESSION["USER"];
 
 require "conn.php"; 
-$query = "SELECT * FROM login WHERE email='$email'";
+$conn = oci_connect('asheerin', 'sP01397995', 'csdb2.csc.Villanova.edu:1521/orcl.villanova.edu');
+$query = "SELECT * FROM PROFILES WHERE email='$email'";
 //echo $query;
+$s = oci_parse($conn, $query);
+oci_execute($s);
+$resultarray = oci_fetch_row($s) or die("Unable to verify user because : " );
 
-$resultarray = mysqli_query($conn,$query) or die("Unable to verify user because : " );
 
-
-if($row = mysqli_fetch_assoc($resultarray))
+if(($row = oci_fetch_row($s)) != false)
 //echo mysql_result($result,0);  // for correct login response
 {
  $rows[] = $row; 
@@ -24,11 +26,18 @@ if($row = mysqli_fetch_assoc($resultarray))
 //$print = $rows[0]; 
 //echo $print;
 
-$sql = "SELECT `name` FROM login  WHERE email = '$email'";
-$result = mysqli_query($conn,$sql);
-$resultarr = mysqli_fetch_assoc($result);
-$name = $resultarr["name"];
+$sql = "SELECT `name` FROM PROFILES WHERE email = '$email'";
+$s = oci_parse($conn, $query);
+oci_execute($s);
+$resultarray = oci_fetch_row($s); 
+$name = $resultarray[1];
+echo $name;
+
+//$result = mysqli_query($conn,$sql);
+//$resultarr = mysqli_fetch_assoc($result);
+//$name = $resultarr["name"];
 //echo $name;
+
 
 ?>
 <html>
