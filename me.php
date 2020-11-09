@@ -31,7 +31,13 @@ $s = oci_parse($conn, $query);
 oci_execute($s);
 $resultarray = oci_fetch_row($s); 
 $name = $resultarray[1];
-echo $name;
+
+$sql2 = "SELECT `bio` FROM PROFILES WHERE email = '$email'";
+$s2 = oci_parse($conn, $query);
+oci_execute($s2);
+$resultarray2 = oci_fetch_row($s2); 
+$bio = $resultarray[7];
+
 
 //$result = mysqli_query($conn,$sql);
 //$resultarr = mysqli_fetch_assoc($result);
@@ -69,9 +75,8 @@ echo $name;
             </div>
             <div class="bio">
                 <ul><b>ABOUT ME</b>
-                    <li>...</li>
-                <li>...</li>
-                <li>...</li></ul>
+                    <li><?php echo $bio; ?></li>
+                </ul>
             </div>
         </div>
         

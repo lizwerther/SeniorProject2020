@@ -58,13 +58,15 @@
   <input type="lname" class="form-control" placeholder="Last Name" name="lname"  required><br>
   <label for="inputUsername" class="sr-only">Email</label><br>
   <input type="email"  class="form-control" placeholder="Email address" name="email" required><br>
-  <label for="inputName" class="sr-only">Phone Number</label><br>
-  <input type="number" class="form-control" placeholder="Phone Number" name="phonenumber"  required><br>
+<!-- <label for="inputName" class="sr-only">Phone Number</label><br> 
+  <input type="number" class="form-control" placeholder="Phone Number" name="phonenumber"  required><br> -->
   <label for="inputName" class="sr-only">Username</label><br>
   <input type="username" class="form-control" placeholder="Username" name="username"  required><br>
   <label for="inputPassword" class="sr-only">Password</label>
-  <br><input type="password" class="form-control" placeholder="Password" name= "password" autocomplete= "on" required>
-      <br>
+  <br><input type="password" class="form-control" placeholder="Password" name= "password" autocomplete= "on" required><br>
+  <label for="inputBio" class="sr-only">Bio</label>
+  <br><input type="bio" class="form-control" placeholder="Tell Us About Yourself!" name= "bio" required>
+  <br>
   <button type="submit" class="btn btn-lg btn-primary btn-block" name="submit">Submit</button>
   <!--<p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p> -->
   <div class="links">
@@ -89,9 +91,10 @@ if(isset($_POST["submit"])){
     $fname = $_POST["fname"];
     $lname = $_POST["lname"];
     $email = $_POST["email"];
-    $phonenumber = $_POST["phonenumber"]; 
+  //  $phonenumber = $_POST["phonenumber"]; 
     $username = $_POST["username"]; 
     $password = $_POST["password"];
+    $bio = $_POST["bio"];
 
     $query = ("SELECT PROFILEID FROM PROFILES WHERE rownum = 1 ORDER BY PROFILEID DESC"); 
     $s = oci_parse($conn, $query);
@@ -102,7 +105,7 @@ if(isset($_POST["submit"])){
     $UserID = $UserID + 1; 
   
     
-    $sql = "INSERT INTO PROFILES (PROFILEID, fname, lname, email, phonenumber, username, pword) VALUES ('$UserID', '$fname', '$lname', '$email', '$phonenumber', '$username', '$password')";
+    $sql = "INSERT INTO PROFILES (PROFILEID, fname, lname, email, username, pword, bio) VALUES ('$UserID', '$fname', '$lname', '$email', '$username', '$password', '$bio')";
 
     $stmt = oci_parse($conn, $sql);
     $res = oci_execute($stmt);
@@ -111,6 +114,7 @@ if(isset($_POST["submit"])){
         echo "Error: " . $error['message'] . "\n";
     }else{
       //  echo "OK\n";
+      header("Location: index.php");
     }
 
 
