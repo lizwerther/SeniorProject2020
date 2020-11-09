@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,21 +11,6 @@
 
     <!-- Bootstrap core CSS -->
 <link href="signin.css" rel="stylesheet">
-<div class="top">
-  <div class="bar">
-      <div class="top-left">
-      <a href="example.html" class="bar-item button">
-      <b>LIST</b>ify
-      </a>
-      </div>
-  <!-- add css-->
-      <div class="top-right">
-          <a href=#Global class="bar-item button">Global</a>
-          <a href=#Following class="bar-item button">Following</a>
-          <a href=#Me class="bar-item button">Me</a>
-          <a href="sign-in.html" class="bar-item button">Login</a>
-      </div>
-  </div>
 
 </div>
     <style>
@@ -50,6 +36,19 @@
   <body class="text-center">
 <form action="login.php" method="post" class="form-signin">
   <img class="mb-4" src="./ListifyLogo.png" alt="" width="72" height="72">
+  <br>
+  <span style="color:red" > <?php
+if(isset($_GET['msg']))
+{
+    $Message = "Your Password is incorrect. Try Again";
+    print $Message;
+}
+if(isset($_GET['msg2']))
+{
+    $Message = "No account with that email. Try Again";
+    print $Message;
+}
+?></span>
   <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
   <label for="inputEmail" class="sr-only">Email Address</label>
   <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" required>
@@ -69,4 +68,5 @@
 </form>
 </body>
 </html>
+
 

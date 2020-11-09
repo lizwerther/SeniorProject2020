@@ -5,28 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v4.1.1">
-    <title>Log in to Listify</title>
+    <title>Make an Account</title>
 
     <!-- Bootstrap core CSS -->
 <link href="signin.css" rel="stylesheet">
-<div class="top">
-  <div class="bar">
-      <div class="top-left">
-      <a href="example.html" class="bar-item button">
-      <b>LIST</b>ify
-      </a>
-      </div>
-  <!-- add css-->
-      <div class="top-right">
-          <a href=#Global class="bar-item button">Global</a>
-          <a href=#Following class="bar-item button">Following</a>
-          <a href=#Me class="bar-item button">Me</a>
-          <a href="sign-in.html" class="bar-item button">Login</a>
-      </div>
-  </div>
-
 </div>
     <style>
       .bd-placeholder-img {
