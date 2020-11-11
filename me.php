@@ -1,48 +1,33 @@
 
 <?php
 session_start();
-
-//echo $_SESSION["USER"];
-$email = $_SESSION["USER"];
+$username = $_SESSION["USER"];
+//echo $username; 
 
 require "conn.php"; 
 $conn = oci_connect('asheerin', 'sP01397995', 'csdb2.csc.Villanova.edu:1521/orcl.villanova.edu');
-$query = "SELECT * FROM PROFILES WHERE email='$email'";
+$query = "SELECT * FROM PROFILES WHERE username='$username'";
 //echo $query;
 $s = oci_parse($conn, $query);
 oci_execute($s);
 $resultarray = oci_fetch_row($s) or die("Unable to verify user because : " );
 
-
 if(($row = oci_fetch_row($s)) != false)
-//echo mysql_result($result,0);  // for correct login response
 {
  $rows[] = $row; 
- }
- // close the database connection
+}
 
-// echo the application data in json format
-//echo json_encode($rows);
-//$print = $rows[0]; 
-//echo $print;
-
-$sql = "SELECT `name` FROM PROFILES WHERE email = '$email'";
+$sql = "SELECT `name` FROM PROFILES WHERE username = '$username'";
 $s = oci_parse($conn, $query);
 oci_execute($s);
 $resultarray = oci_fetch_row($s); 
-$name = $resultarray[1];
+$name = $resultarray[0];
 
-$sql2 = "SELECT `bio` FROM PROFILES WHERE email = '$email'";
+$sql2 = "SELECT `bio` FROM PROFILES WHERE username = '$username'";
 $s2 = oci_parse($conn, $query);
 oci_execute($s2);
 $resultarray2 = oci_fetch_row($s2); 
-$bio = $resultarray[7];
-
-
-//$result = mysqli_query($conn,$sql);
-//$resultarr = mysqli_fetch_assoc($result);
-//$name = $resultarr["name"];
-//echo $name;
+$bio = $resultarray[5];
 
 
 ?>
@@ -55,7 +40,7 @@ $bio = $resultarray[7];
         <div class="top">
             <div class="bar">
                 <div class="top-left">
-                <a href="example.html" class="bar-item button">
+                <a href="welcomepage.html" class="bar-item button">
                 <b>LIST</b>ify
                 </a>
                 </div>
@@ -63,8 +48,9 @@ $bio = $resultarray[7];
                 <div class="top-right">
                     <a href="global.html" class="bar-item button">Global</a>
                     <a href="following.html" class="bar-item button">Following</a>
-                    <a href="me.html" class="bar-item button">Me</a>
+                    <a href="me.php" class="bar-item button">Me</a>
                     <a href="sign-in.html" class="bar-item button">Login</a>
+                    <a href="newpost.php" class ="bar-item button">+</a>
                 </div>
             </div>
 
@@ -79,8 +65,9 @@ $bio = $resultarray[7];
                 </ul>
             </div>
         </div>
+
         
-   <!--     <div class="sections">
+   <!--    <div class="sections">
                 <div class="category">
                     <div class="section1">
                         <ul><b>Books</b>

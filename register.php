@@ -60,9 +60,9 @@
 </html>
 
 <?php
-$UserID = 0; 
+//$UserID = 0; 
 //$conn = mysqli_connect('localhost', 'listify', '', 'general');
-$conn = oci_connect('asheerin', 'sP01397995', 'csdb2.csc.Villanova.edu:1521/orcl.villanova.edu', 'general');
+$conn = oci_connect('asheerin', 'sP01397995', 'csdb2.csc.Villanova.edu:1521/orcl.villanova.edu');
 require "conn.php"; 
 if(!$conn){ 
    echo "connection fail";
@@ -78,16 +78,16 @@ if(isset($_POST["submit"])){
     $password = $_POST["password"];
     $bio = $_POST["bio"];
 
-    $query = ("SELECT PROFILEID FROM PROFILES WHERE rownum = 1 ORDER BY PROFILEID DESC"); 
-    $s = oci_parse($conn, $query);
-    oci_execute($s);
-    $row = oci_fetch_array($s, OCI_NUM);
-    $UserID= $row[0];
+   // $query = ("SELECT PROFILEID FROM PROFILES WHERE rownum = 1 ORDER BY PROFILEID DESC"); 
+   // $s = oci_parse($conn, $query);
+   // oci_execute($s);
+   // $row = oci_fetch_array($s, OCI_NUM);
+   // $UserID= $row[0];
 
-    $UserID = $UserID + 1; 
+   // $UserID = $UserID + 1; 
   
     
-    $sql = "INSERT INTO PROFILES (PROFILEID, fname, lname, email, username, pword, bio) VALUES ('$UserID', '$fname', '$lname', '$email', '$username', '$password', '$bio')";
+    $sql = "INSERT INTO PROFILES (fname, lname, email, username, pword, bio) VALUES ('$fname', '$lname', '$email', '$username', '$password', '$bio')";
 
     $stmt = oci_parse($conn, $sql);
     $res = oci_execute($stmt);

@@ -45,13 +45,13 @@ if(isset($_GET['msg']))
 }
 if(isset($_GET['msg2']))
 {
-    $Message = "No account with that email. Try Again";
+    $Message = "No account with that username. Try Again";
     print $Message;
 }
 ?></span>
   <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-  <label for="inputEmail" class="sr-only">Email Address</label>
-  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" required>
+  <label for="inputEmail" class="sr-only">Username</label><br>
+  <input type="username" id="inputUsername" class="form-control" placeholder="Username" name="username" required>
   <br><label for="inputPassword" class="sr-only">Password</label>
   <br><input type="password" id="inputPassword" class="form-control" placeholder="Password" name ="password" prequired>
   <div class="checkbox mb-3">
