@@ -47,7 +47,7 @@ $bio = $resultarray[5];
             <!-- add css-->
                 <div class="top-right">
                     <a href="global.html" class="bar-item button">Global</a>
-                    <a href="following.html" class="bar-item button">Following</a>
+                    <!-- <a href="following.html" class="bar-item button">Following</a> -->
                     <a href="me.php" class="bar-item button">Me</a>
                     <a href="sign-in.html" class="bar-item button">Login</a>
                     <a href="newpost.php" class ="bar-item button">+</a>
