@@ -31,11 +31,10 @@ html, body{
     letter-spacing: 2px;
     vertical-align: middle;
 }
-div{ 
+/* div{ 
     display: block;
-}
+} */
 .bar-item{
-    /*padding: 8px 16px; */
     padding: 8px;
     float: left;
     color: #d54d7b;
