@@ -32,6 +32,7 @@
   </head>
   <body class="text-center">
     <form method="post" class="form-signin">
+  <div class="main">
   <img class="mb-4" src="./ListifyLogo.png" alt="" width="72" height="72">
   <h1 class="h3 mb-3 font-weight-normal">Register Here</h1>
   <label for="inputName" class="sr-only">First Name</label><br>
@@ -48,26 +49,27 @@
   <br><input type="password" class="form-control" placeholder="Password" name= "password" autocomplete= "on" required><br>
   <label for="inputBio" class="sr-only">Bio</label>
   <br><input type="bio" class="form-control" placeholder="Tell Us About Yourself!" name= "bio" required>
-  <br>
+  <!-- <br> -->
   <button type="submit" class="btn btn-lg btn-primary btn-block" name="submit">Submit</button>
   <!--<p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p> -->
   <div class="links">
   <a href="index.php">Already Have an Account? Log in Here</a>
   </div>
+</div>
 
 </form>
 </body>
 </html>
 
 <?php
-//$UserID = 0; 
-//$conn = mysqli_connect('localhost', 'listify', '', 'general');
+$UserID = 0; 
+$conn = mysqli_connect('localhost', 'listify', '', 'general');
 $conn = oci_connect('asheerin', 'sP01397995', 'csdb2.csc.Villanova.edu:1521/orcl.villanova.edu');
 require "conn.php"; 
 if(!$conn){ 
    echo "connection fail";
 }
-// else {echo "connection success";}
+else {echo "connection success";}
 
 if(isset($_POST["submit"])){ 
     $fname = $_POST["fname"];
