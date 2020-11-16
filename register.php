@@ -28,11 +28,13 @@
     </style>
     <!-- Custom styles for this template -->
     <link href="signin.css" rel="stylesheet">
-    <link href="css.css" rel="stylesheet">
+    <!-- <link href="css.css" rel="stylesheet"> -->
   </head>
   <body class="text-center">
     <form method="post" class="form-signin">
-  <img class="mb-4" src="./ListifyLogo.png" alt="" width="72" height="72">
+    <img class="mb-4" src="./ListifyLogo.png" alt="" width="72" height="72">
+  <div class="main">
+
   <h1 class="h3 mb-3 font-weight-normal">Register Here</h1>
   <label for="inputName" class="sr-only">First Name</label><br>
   <input type="fname" class="form-control" placeholder="First Name" name="fname"  required><br>
@@ -63,6 +65,7 @@
   <div class="links">
   <a href="index.php">Already Have an Account? Log in Here</a>
   </div>
+</div>
 </form>
 </body>
 </html>
@@ -70,11 +73,11 @@
 <?php
 //$UserID = 0; 
 //$conn = mysqli_connect('localhost', 'listify', '', 'general');
-$conn = oci_connect('asheerin', 'sP01397995', 'csdb2.csc.Villanova.edu:1521/orcl.villanova.edu');
-require "conn.php"; 
-if(!$conn){ 
-   echo "connection fail";
-}
+// $conn = oci_connect('asheerin', 'sP01397995', 'csdb2.csc.Villanova.edu:1521/orcl.villanova.edu');
+// require "conn.php"; 
+// if(!$conn){ 
+//    echo "connection fail";
+// }
 // else {echo "connection success";}
 
 if(isset($_POST["submit"])){ 
