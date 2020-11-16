@@ -71,13 +71,13 @@
 </html>
 
 <?php
-//$UserID = 0; 
-//$conn = mysqli_connect('localhost', 'listify', '', 'general');
-// $conn = oci_connect('asheerin', 'sP01397995', 'csdb2.csc.Villanova.edu:1521/orcl.villanova.edu');
-// require "conn.php"; 
-// if(!$conn){ 
-//    echo "connection fail";
-// }
+$UserID = 0; 
+$conn = mysqli_connect('localhost', 'listify', '', 'general');
+$conn = oci_connect('asheerin', 'sP01397995', 'csdb2.csc.Villanova.edu:1521/orcl.villanova.edu');
+require "conn.php"; 
+if(!$conn){ 
+     echo "connection fail";
+}
 // else {echo "connection success";}
 
 if(isset($_POST["submit"])){ 

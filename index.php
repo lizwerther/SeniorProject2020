@@ -27,17 +27,12 @@
           font-size: 3.5rem;
         }
       }
-      .body {
-        height: 400px;
-        background: linear-gradient(to bottom right, #4169E1 0%, #DA70D6 100%)
-      }
     </style>
     <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
-    <link href="css.css" rel="stylesheet">
+    <!-- <link href="signin.css" rel="stylesheet">
+    <link href="css.css" rel="stylesheet"> -->
   </head>
   <body class="text-center">
-      
 <form action="login.php" method="post" class="form-signin">
   <img class="mb-4" src="./ListifyLogo.png" alt="" width="72" height="72">
   <br>
@@ -59,16 +54,11 @@ if(isset($_GET['msg2']))
   <input type="username" id="inputUsername" class="form-control" placeholder="Username" name="username" required>
   <br><label for="inputPassword" class="sr-only">Password</label>
   <br><input type="password" id="inputPassword" class="form-control" placeholder="Password" name ="password" prequired>
-  <!-- <div class="checkbox mb-3">
-    <label>
-      <input type="checkbox" value="remember-me"> Remember me
-    </label>
-  </div> -->
-  <br><button class="btn btn-lg btn-primary btn-block" type="submit" name = "submit">Log in</button>
+  <br>
+  <button class="btn btn-lg btn-primary btn-block" type="submit" name = "submit">Log in</button>
   <!--<p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p> -->
   <div class="links">
   <a href="register.php">Need an Account? Register Here</a>
-  <!-- <br><a href="password_reset.php">Forgot your password? Reset it </a> -->
   </div>
 </div>
 </form>
