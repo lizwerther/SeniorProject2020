@@ -1,22 +1,31 @@
+<?php
+session_start();  
+$conn = oci_connect('asheerin', 'sP01397995', 'csdb2.csc.Villanova.edu:1521/orcl.villanova.edu');
+require "conn.php"; 
+if(!$conn){ 
+   echo "connection fail";
+}
+
+?>
 <html>
     <head>
+      <div class = "header">
         <link rel="stylesheet" type:"text/css" href="css.css">
-        <div class="top">
-            <div class="bar">
-                <div class="top-left">
-                <a href="newpost.html" class="bar-item button">
+        <div class="bar">
+              <div class="top-left">
+                <a href="welcomepage.html" class="bar-item button">
                 <b>LIST</b>ify
                 </a>
                 </div>
-            <!-- add css-->
                 <div class="top-right">
-                    <a href="global.html" class="bar-item button">Global</a>
+                    <a href="global.php" class="bar-item button">Global</a>
                     <!-- <a href="following.html" class="bar-item button">Following</a> -->
-                    <a href="me.html" class="bar-item button">Me</a>
-                    <a href="sign-in.html" class="bar-item button">Login</a>
-                    <a href="newpost.html" class="bar-item button">+</a>
+                    <a href="me.php" class="bar-item button">Me</a>
+                    <a href="index.php" class="bar-item button">Login</a>
+                    <a href="newpost.php" class="bar-item button">+</a>
                 </div>
             </div>
+      </div>
             <div>
             <input[type=text], select {
                 width: 100%;
@@ -127,53 +136,35 @@
 </html>
 
 <?php
-//session_start();  
-$conn = oci_connect('asheerin', 'sP01397995', 'csdb2.csc.Villanova.edu:1521/orcl.villanova.edu');
-require "conn.php"; 
-if(!$conn){ 
-   echo "connection fail";
-}
-echo "testing";
 if(isset($_POST["submit"])){ 
-    echo  "got it ";
-    $title = $_POST["title"];
-    $category = $_POST["category"];
-    $rating = $_POST["rating"];
-    $post = $_POST["post"];
+  $username = $_SESSION["USER"];
+  $title = $_POST["title"];
+  $title = str_replace("'", "''", $title);
+  $category = $_POST["category"];
+  $rating = $_POST["rating"];
+  $post = $_POST["post"];
+  $post = str_replace("'", "''", $post);
 
 
-    $query = ("SELECT POSTID FROM POST WHERE rownum = 1 ORDER BY POSTID DESC"); 
-    $s = oci_parse($conn, $query);
-    oci_execute($s);
-    $row = oci_fetch_array($s, OCI_NUM);
-    $PostID= $row[0];
-    $PostID = $PostID + 1; 
-   
+  $query = ("SELECT POSTID FROM POST WHERE rownum = 1 ORDER BY POSTID DESC"); 
+  $s = oci_parse($conn, $query);
+  oci_execute($s);
+  $row = oci_fetch_array($s, OCI_NUM);
+  $PostID= $row[0];
+  $PostID = $PostID + 1; 
+ 
+
   
-    
-    $sql = "INSERT INTO POST (POSTID, POSTTITLE, POSTCategory, POSTRating, PostContent) VALUES ('$PostID', '$title', '$category', '$rating', '$post')"; 
-    $stmt = oci_parse($conn, $sql);
-    $res = oci_execute($stmt);
-    if( !$res ){
-        $error = oci_error($stmt);
-        echo "Error: " . $error['message'] . "\n";
-    }else{
-    echo "OK\n";
-     // header("Location: newpost.php");
-    }
-
-
-    //$query = "INSERT INTO PROFILES (PROFILEID, fname, email, pword) VALUES ('$username', '$name', '$email', '$password')"; 
-    //echo $query;
-   // $result = mysqli_query($conn,$query); 
-    //echo $result; 
-   
-   // if($result){ 
-     //   echo "your account has been created";
-   // }
-    //else { 
-    //    echo "sorry, there is a problem";
-   // }
+  $sql = "INSERT INTO POST (username, POSTID, POSTTITLE, POSTCategory, POSTRating, PostContent) VALUES ('$username','$PostID', '$title', '$category', '$rating', '$post')"; 
+  $stmt = oci_parse($conn, $sql);
+  $res = oci_execute($stmt);
+  if( !$res ){
+      $error = oci_error($stmt);
+      echo "Error: " . $error['message'] . "\n";
+  }else{
+  //echo "OK\n";
+   // header("Location: newpost.php");
+  }
 }
 
 ?>
