@@ -89,6 +89,7 @@ if(isset($_POST["submit"])){
     $email = $_POST["email"];
     $username = $_POST["username"]; 
     $password = $_POST["password"];
+    $password = password_hash($password, PASSWORD_BCRYPT);
     $bio = $_POST["bio"];
    if(in_array('movies', $_POST['interests'])){
         $sql = "INSERT INTO INTERESTS (username, interest) VALUES ('$username', 'movies')";
@@ -142,7 +143,7 @@ if(in_array('games', $_POST['interests'])){
     $res = oci_execute($stmt);
     if( !$res ){
         $error = oci_error($stmt);
-        echo "An account with that password already exists!";
+        echo "An account with that username already exists!";
         //echo "Error: " . $error['message'] . "\n";
     }else{
       //  echo "OK\n";

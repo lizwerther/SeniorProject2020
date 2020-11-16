@@ -23,6 +23,7 @@ $resultarray = oci_fetch_row($s);
 $name = $resultarray[0];
 $lname = $resultarray[1];
 
+
 $sql2 = "SELECT `bio` FROM PROFILES WHERE username = '$username'";
 $s2 = oci_parse($conn, $query);
 oci_execute($s2);
@@ -72,10 +73,11 @@ $categories = array_unique($categories);
     </div>
       <div id = "block1">
                     <h2 class = "name"><?php echo $name, " "; echo $lname; ?></h2>
+                    <h3 class = "username"><?php echo "@", $username; ?></h3>
                     <p class="bio"><?php echo $bio; ?></p>
        </div>
        <div id = "block2">
-                    <h2 class="category">Interests:</h2>
+                    <h2 class="category">My Lists:</h2>
                     <!-- liz: can you change css of list to make 2 columns" -->
                     <?php foreach ($categories as $v) { 
                       //echo "<button type=\"button\"> $v </button>
