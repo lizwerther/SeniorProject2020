@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -33,6 +32,20 @@
   <body class="text-center">
     <form method="post" class="form-signin">
     <img class="mb-4" src="./ListifyLogo.png" alt="" width="72" height="72">
+<br>
+    <span style="color:red" > <?php
+if(isset($_GET['msgusername']))
+{
+    $Message = "An Account with that Username already exists";
+    print $Message;
+}
+if(isset($_GET['msgemail']))
+{
+    $Message = "An account with that Email already exists";
+    print $Message;
+}
+?></span>
+
   <div class="main" >
 
   <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
@@ -136,9 +149,22 @@ if(in_array('games', $_POST['interests'])){
 
    //$UserID = $UserID + 1; 
   
-    //need to add that the username already exists
-    $sql = "INSERT INTO PROFILES (fname, lname, email, username, pword, bio) VALUES ('$fname', '$lname', '$email', '$username', '$password', '$bio')";
+    $sql_test = "SELECT * FROM PROFILES where (username = '$username' or email='$email')";
+      $stmt = oci_parse($conn, $sql_test);
+      $res = oci_execute($stmt);
+    if(($numrows= oci_num_fields($res)) == false){ 
+      $row = oci_fetch_row($res);
+      if($username==$row["USERNAME"])
+      { 
+        header("Location:register.php?msgusername");
+      }
+      else{ 
+        header("Location:register.php?msgemail");
+      }
+    }
 
+    else{ 
+    $sql = "INSERT INTO PROFILES (fname, lname, email, username, pword, bio) VALUES ('$fname', '$lname', '$email', '$username', '$password', '$bio')";
     $stmt = oci_parse($conn, $sql);
     $res = oci_execute($stmt);
     if( !$res ){
@@ -149,6 +175,7 @@ if(in_array('games', $_POST['interests'])){
       //  echo "OK\n";
       header("Location: index.php");
     }
+  }
 
 
     //$query = "INSERT INTO PROFILES (PROFILEID, fname, email, pword) VALUES ('$username', '$name', '$email', '$password')"; 

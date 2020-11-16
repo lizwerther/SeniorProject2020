@@ -5,8 +5,6 @@ $conn = oci_connect('asheerin', 'sP01397995', 'csdb2.csc.Villanova.edu:1521/orcl
 if(isset($_POST["submit"])){ 
     $username = $_POST["username"]; 
     $password = $_POST["password"]; 
-    echo $username;
-    echo $password;
     $query = "SELECT * FROM PROFILES WHERE username='$username'";
     $s = oci_parse($conn, $query);
     oci_execute($s);
@@ -23,9 +21,8 @@ if(isset($_POST["submit"])){
            //echo $row[0];
             $db_password = $row[4]; 
             $db_username = $row[3]; 
-          echo $db_password;
-          echo $db_username;
-            if($username == $db_username && $password == $db_password){ 
+
+            if($username == $db_username && password_verify($password, $db_password)){ 
                 $_SESSION["USER"] = $username; 
                 header("Location: me.php");
                 echo "You are in!!";

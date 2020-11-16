@@ -1,32 +1,23 @@
-<?php
-session_start();  
-$conn = oci_connect('asheerin', 'sP01397995', 'csdb2.csc.Villanova.edu:1521/orcl.villanova.edu');
-require "conn.php"; 
-if(!$conn){ 
-   echo "connection fail";
-}
 
-?>
 <html>
     <head>
-      <div class = "header">
         <link rel="stylesheet" type:"text/css" href="css.css">
-        <link rel="stylesheet" type:"text/css" href="css-me.css">
-        <div class="bar">
-              <div class="top-left">
-                <a href="welcomepage.html" class="bar-item button">
+        <div class="top">
+            <div class="bar">
+                <div class="top-left">
+                <a href="newpost.html" class="bar-item button">
                 <b>LIST</b>ify
                 </a>
                 </div>
+            <!-- add css-->
                 <div class="top-right">
-                    <a href="global.php" class="bar-item button">Global</a>
-                    <!-- <a href="following.html" class="bar-item button">Following</a> -->
-                    <a href="me.php" class="bar-item button">Me</a>
-                    <a href="index.php" class="bar-item button">Login</a>
-                    <a href="newpost.php" class="bar-item button">+</a>
+                    <a href="global.html" class="bar-item button">Global</a>
+                    <a href="following.html" class="bar-item button">Following</a>
+                    <a href="me.html" class="bar-item button">Me</a>
+                    <a href="sign-in.html" class="bar-item button">Login</a>
+                    <a href="newpost.html" class="bar-item button">+</a>
                 </div>
             </div>
-      </div>
             <div>
             <input[type=text], select {
                 width: 100%;
@@ -70,7 +61,7 @@ if(!$conn){
                     outline: none;
                     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
                   }
-                  input[type=title] {
+                  input[type=text2] {
                     width: 93%;
                     padding: 12px 5px;
                     margin: 8px 10px;
@@ -86,22 +77,22 @@ if(!$conn){
                   }
                   
                 </style>
-                <form method= "post">
+                <form action="/action_page.php">
                   <!-- <label for="fname">Title</label> -->
-                  Title<input type="title" id="title" name="title" placeholder="Post Title">
-                  <label type = "category" for="category">Category</label>
+                  Title<input type="text2" id="title" name="title" placeholder="Post Title">
+                  <label for="category">Category</label>
                   <select name="category" id="category">
-                    <option value="Movies">Movies</option>
-                    <option value="TV Shows">Tv Shows</option>
-                    <option value="Podcasts">Podcasts</option>
+                    <option value="movies">Movies</option>
+                    <option value="tvshows">Tv Shows</option>
+                    <option value="podcasts">Podcasts</option>
                     <option value="Food">Food</option>
-                    <option value="Fashion">Fashion</option>
-                    <option value="Books">Books</option>
-                    <option value="Games">games</option>
+                    <option value="fashion">Fashion</option>
+                    <option value="books">Books</option>
+                    <option value="games">games</option>
                   </select>
                   <!-- <input type="submit" id="category" name="category" placeholder="Category"> -->
                   <br>
-                  <label type= "rating" for="type">Rating</label>
+                  <label for="type">Rating</label>
                   <select name="rating" id="rating">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -125,7 +116,7 @@ if(!$conn){
                       resize: none;
                    }></textarea> -->
 
-                   <button type="submit" class="btn btn-lg btn-primary btn-block" name="submit">Post</button>
+                  <input type="submit" value="Post">
                 </form>
               </div>
             </div>
@@ -135,37 +126,3 @@ if(!$conn){
 
     </body>
 </html>
-
-<?php
-if(isset($_POST["submit"])){ 
-  $username = $_SESSION["USER"];
-  $title = $_POST["title"];
-  $title = str_replace("'", "''", $title);
-  $category = $_POST["category"];
-  $rating = $_POST["rating"];
-  $post = $_POST["post"];
-  $post = str_replace("'", "''", $post);
-
-
-  $query = ("SELECT POSTID FROM POST ORDER BY POSTID DESC"); 
-  $s = oci_parse($conn, $query);
-  oci_execute($s);
-  $row = oci_fetch_array($s, OCI_NUM);
-  $PostID= $row[0];
-  $PostID = $PostID + 1; 
- 
-
-  
-  $sql = "INSERT INTO POST (username, POSTID, POSTTITLE, POSTCategory, POSTRating, PostContent) VALUES ('$username','$PostID', '$title', '$category', '$rating', '$post')"; 
-  $stmt = oci_parse($conn, $sql);
-  $res = oci_execute($stmt);
-  if( !$res ){
-      $error = oci_error($stmt);
-      echo "Error: " . $error['message'] . "\n";
-  }else{
-  //echo "OK\n";
-   // header("Location: newpost.php");
-  }
-}
-
-?>
