@@ -24,11 +24,32 @@
                     <p class="bio">hi i'm taylor and i'm so excited to be here! What is an Instagram Bio? Your Instagram bio is the section on your profile page where you include some information about yourself and/or your business. It can be found underneath your Instagram username. In your bio, you can include a short description,</p>
        </div>
        <div id = "block2">
-                    <h2 class="category">Interests:</h2>
+                    <h2 class="category">My Lists:</h2>
                     <!-- liz: can you change css of list to make 2 columns" -->
                     <?php foreach ($categories as $v) { 
                       //echo "<button type=\"button\"> $v </button>
-                      echo "<ul title = \"$v\">";
+                      echo "<ul title = Movies>";
+                      foreach($postArray as $post) { 
+                        if($post[1] == $v){ 
+                          echo "<a href=\"#$post[4]\"> <li> $post[0] </li></a>";
+                        }
+                      }
+                      echo "</ul>";
+                    }
+                    <?php foreach ($categories as $v) { 
+                      //echo "<button type=\"button\"> $v </button>
+                      echo "<ul title = Books>";
+                      foreach($postArray as $post) { 
+                        if($post[1] == $v){ 
+                          echo "<a href=\"#$post[4]\"> <li> $post[0] </li></a>";
+                        }
+                      }
+                      echo "</ul>";
+                    }
+
+                    <?php foreach ($categories as $v) { 
+                      //echo "<button type=\"button\"> $v </button>
+                      echo "<ul title = Podcasts>";
                       foreach($postArray as $post) { 
                         if($post[1] == $v){ 
                           echo "<a href=\"#$post[4]\"> <li> $post[0] </li></a>";
