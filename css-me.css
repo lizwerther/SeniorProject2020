@@ -1,6 +1,6 @@
 html, body{
     height: 100%;
-    font-family: serif;
+    font-family: "Ubuntu", sans-serif;
     font-size: 20px;
 }
 .column { 
@@ -20,28 +20,41 @@ html, body{
 
 }
 .bar{
-    color: #000;
-    background-color: #fff;
+    margin-top: 5px;
+    color: #fff!important;
+    background: linear-gradient(to bottom right, #1f4ac9 0%, #DA70D6 110%);
+    /* background-color: rgb(37, 15, 160)!important; */
     padding: 8px 10px!important;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
     width: 98.5%;
     overflow: hidden;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     vertical-align: middle;
+    font-family: Verdana,sans-serif;
+    font-size: 14px;
 }
 a.bar-item.button{ 
-    color: #d54d7b;
+    color: #ffffff;
 }
 #block1{ 
     height: 300px; 
-    background-color:lightgray; 
-    padding: 0px;
+    background-color:white;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19); 
+    padding: 30px;
     text-align: center;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    font-family: Georgia;
+    max-height: 350px;
 }
 #block2{ 
     height: auto; 
     background-color: grey; 
-
+    background-color:white;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    margin-top: 5px;
+    margin-bottom: 5px;
+    max-width: relative;
 }
 ul{ 
     display: inline-table;
@@ -64,11 +77,12 @@ a:visited{
 }
 a:hover{ 
     color: black; 
-    text-decoration: underline; 
+    text-decoration: underline;
 }
 a:active{ 
     color: black;
     text-decoration: underline;
+    text-decoration-color: black;
 }
 /* div{ 
     display: block;
@@ -76,20 +90,19 @@ a:active{
 .bar-item{
     padding: 8px;
     float: left;
-    color: #d54d7b;
+    color: #000000;
     text-decoration: none;
-
 }
 .button{ 
     vertical-align: middle;
     text-align: center;
     cursor: pointer;
-
 }
-.button:hover {
-    background-color: #d54d7b;
+/* .button:hover {
+    border-color: white;
     color: white;
-  }
+  } */
+
 .top-right{ 
     float: right!important;
     
@@ -97,15 +110,23 @@ a:active{
 .name{
     font-size: 90;
     padding: 30px;
+    text-align: center;
+    margin-bottom: 5px;
+    max-height: 90px;
 }
 .bio{
+    font-family: "Ubuntu", sans-serif;
     margin-left: auto; 
-    margin-right: auto; 
+    margin-right: auto;
+    margin-bottom: 30px;
     object-position: center;
     width: 900px; 
     font-size: 18;
-    background-color: pink;
-    padding: 15px; 
+    background-color: royalblue;
+    color: white;
+    padding: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .sections{

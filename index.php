@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.1.1">
-    <title>Log in to Listify</title>
+    <title>Listify</title>
 
     <!-- Bootstrap core CSS -->
 <link href="signin.css" rel="stylesheet">
@@ -49,16 +49,16 @@ if(isset($_GET['msg2']))
 }
 ?></span>
 <div class="main">
-  <h1 class="h3 mb-3 font-weight-normal">Sign in</h1>
+  <h1 class="h3 mb-3 font-weight-normal">Log In</h1>
   <label for="inputEmail" class="sr-only">Username</label><br>
   <input type="username" id="inputUsername" class="form-control" placeholder="Username" name="username" required>
   <br><label for="inputPassword" class="sr-only">Password</label>
   <br><input type="password" id="inputPassword" class="form-control" placeholder="Password" name ="password" prequired>
   <br>
-  <button class="btn btn-lg btn-primary btn-block" type="submit" name = "submit">Log in</button>
+  <button class="btn btn-lg btn-primary btn-block" type="submit" name = "submit">Log In</button>
   <!--<p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p> -->
   <div class="links">
-  <a href="register.php">Need an Account? Register Here</a>
+  <a href="register.php">Need an account? Sign up</a>
   </div>
 </div>
 </form>

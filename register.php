@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <title>Make an Account</title>
+    <title>Listify</title>
 
     <!-- Bootstrap core CSS -->
 <link href="signin.css" rel="stylesheet">
@@ -33,9 +33,10 @@
   <body class="text-center">
     <form method="post" class="form-signin">
     <img class="mb-4" src="./ListifyLogo.png" alt="" width="72" height="72">
-  <div class="main">
+  <div class="main" >
 
-  <h1 class="h3 mb-3 font-weight-normal">Register Here</h1>
+  <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
+  <div class="register">
   <label for="inputName" class="sr-only">First Name</label><br>
   <input type="fname" class="form-control" placeholder="First Name" name="fname"  required><br>
   <label for="inputName" class="sr-only">Last Name</label><br>
@@ -50,8 +51,10 @@
   <br><input type="password" class="form-control" placeholder="Password" name= "password" autocomplete= "on" required><br>
   <label for="inputBio" class="sr-only">Bio</label>
   <br><input type="bio" class="form-control" placeholder="Tell Us About Yourself!" name= "bio" required>
+  </div>
   <!--<input name="interests" for ="inputInterests" > -->
   <p>Please select all of your interests!</p>
+    <div class="interests">
     Movies: <input type="checkbox" name="interests[]" value="Movies"  /><br />
     TV Shows: <input type="checkbox" name="interests[]" value="Tv Shows"  /><br /> 
     Podcasts: <input type="checkbox" name="interests[]" value="Podcasts"  /><br /> 
@@ -59,11 +62,11 @@
     Food: <input type="checkbox" name="interests[]" value="Food"  /><br /> 
     Fashion: <input type="checkbox" name="interests[]" value="Fashion"  /><br /> 
     Games: <input type="checkbox" name="interests[]" value="Games"  /><br /> 
-<br>
-  <button type="submit" class="btn btn-lg btn-primary btn-block" name="submit">Submit</button>
+    </div>
+  <button type="submit" class="btn btn-lg btn-primary btn-block" name="submit">Sign Up</button>
   <!--<p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p> -->
   <div class="links">
-  <a href="index.php">Already Have an Account? Log in Here</a>
+  <a href="index.php">Already have an account? Log in</a>
   </div>
 </div>
 </form>
