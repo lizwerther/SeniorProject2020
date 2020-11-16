@@ -59,13 +59,35 @@ a.bar-item.button{
 ul{ 
     display: inline-table;
     margin-top: -15;
+    border: solid;
+    border-color: 6280d9;
+    border-radius: 0px;
+    border-width: 1.5px;
 }
 ul[title]::before{ 
-    content: attr(title); 
+    /* content: attr(title); 
     font-weight: bold; 
     font-size: 25; 
     color: lightgrey; 
+    margin-left: -30; */
+    content: attr(title); 
+    font-weight: bold; 
+    font-size: 25;
+    font-family: "Open Sans"; 
+    color: black; 
     margin-left: -30;
+}
+li{
+    /* background-color: #white; */
+    max-width: inherit;
+    font-variant-caps: all-petite-caps;
+    color: black;
+    /* margin: 20%; */
+    align-items: left;
+}
+li::marker{
+    color: black;
+    list-style: dashed;
 }
 a:link{ 
     color: black;
@@ -80,9 +102,9 @@ a:hover{
     text-decoration: underline;
 }
 a:active{ 
-    color: black;
+    color: white;
     text-decoration: underline;
-    text-decoration-color: black;
+    text-decoration-color: white;
 }
 /* div{ 
     display: block;
