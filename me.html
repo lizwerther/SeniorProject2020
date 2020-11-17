@@ -8,7 +8,8 @@
     <div class="bar">
       <div class="top-left">
           <a class="bar-item button" href="welcomepage.html"> 
-            <b>LIST</b>ify
+            <!-- <b>LIST</b>ify -->
+            <img class="mb-4" src="./listify 1.png" alt="" width="100" height="35">
           </a>
       </div>
       <div class="top-right">
@@ -49,7 +50,8 @@
 
                     <?php foreach ($categories as $v) { 
                       //echo "<button type=\"button\"> $v </button>
-                      echo "<ul title = Podcasts>";
+                      echo "<ul title = Podcasts
+                      ['l.]>";
                       foreach($postArray as $post) { 
                         if($post[1] == $v){ 
                           echo "<a href=\"#$post[4]\"> <li> $post[0] </li></a>";
