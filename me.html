@@ -29,40 +29,18 @@
        <div id = "block2">
                     <h2 class="category"><img class="mb-4" src="./Listify L transparent.png" alt="" width="35" height="35">ists:</h2>
                     <!-- liz: can you change css of list to make 2 columns" -->
-                    <?php foreach ($categories as $v) { 
-                      //echo "<button type=\"button\"> $v </button>
-                      echo "<ul title = Movies>";
-                      foreach($postArray as $post) { 
-                        if($post[1] == $v){ 
-                          echo "<a href=\"#$post[4]\"> <li> $post[0] </li></a>";
-                        }
-                      }
-                      echo "</ul>";
-                    }
-                    <?php foreach ($categories as $v) { 
-                      //echo "<button type=\"button\"> $v </button>
-                      echo "<ul title = Books>";
-                      foreach($postArray as $post) { 
-                        if($post[1] == $v){ 
-                          echo "<a href=\"#$post[4]\"> <li> $post[0] </li></a>";
-                        }
-                      }
-                      echo "</ul>";
-                    }
+                    <ul title = Movies>
+                        <a href=\"#$post[4]\"> <li> $post[0] </li></a>
+                       </ul>
+                    <ul title = Books>
+                      <a href=\"#$post[4]\"> <li> $post[0] </li></a>
+                     </ul>
 
-                    <?php foreach ($categories as $v) { 
-                      //echo "<button type=\"button\"> $v </button>
-                      echo "<ul title = Podcasts
-                      ['l.]>";
-                      foreach($postArray as $post) { 
-                        if($post[1] == $v){ 
-                          echo "<a href=\"#$post[4]\"> <li> $post[0] </li></a>";
-                        }
-                      }
-                      echo "</ul>";
-                    }
+                    <ul title = Podcasts
+                      "<a href=\"#$post[4]\"> <li> $post[0] </li></a>
+                    </ul>
 
-                    ?>
+                    
       </div>
                     <h2>Posts:</h2>
                     <div class= "Posts">
