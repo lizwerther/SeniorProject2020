@@ -68,13 +68,13 @@ if(isset($_GET['msgemail']))
   <!--<input name="interests" for ="inputInterests" > -->
   <p>Please select all of your interests!</p>
     <div class="interests">
-    Movies: <input type="checkbox" name="interests[]" value="movies"  /><br />
-    TV Shows: <input type="checkbox" name="interests[]" value="tvshows"  /><br /> 
-    Podcasts: <input type="checkbox" name="interests[]" value="podcasts"  /><br /> 
-    Books: <input type="checkbox" name="interests[]" value="books"  /><br />
-    Food: <input type="checkbox" name="interests[]" value="food"  /><br /> 
-    Fashion: <input type="checkbox" name="interests[]" value="fashion"  /><br /> 
-    Games: <input type="checkbox" name="interests[]" value="games"  /><br /> 
+    Movies: <input type="checkbox" name="interests[]" value="Movies"  /><br />
+    TV Shows: <input type="checkbox" name="interests[]" value="Tv Shows"  /><br /> 
+    Podcasts: <input type="checkbox" name="interests[]" value="Podcasts"  /><br /> 
+    Books: <input type="checkbox" name="interests[]" value="Books"  /><br />
+    Food: <input type="checkbox" name="interests[]" value="Food"  /><br /> 
+    Fashion: <input type="checkbox" name="interests[]" value="Fashion"  /><br /> 
+    Games: <input type="checkbox" name="interests[]" value="Games"  /><br /> 
     </div>
   <button type="submit" class="btn btn-lg btn-primary btn-block" name="submit">Sign Up</button>
   <!--<p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p> -->
@@ -104,38 +104,38 @@ if(isset($_POST["submit"])){
     $password = $_POST["password"];
     $password = password_hash($password, PASSWORD_BCRYPT);
     $bio = $_POST["bio"];
-   if(in_array('movies', $_POST['interests'])){
-        $sql = "INSERT INTO INTERESTS (username, interest) VALUES ('$username', 'movies')";
+   if(in_array('Movies', $_POST['interests'])){
+        $sql = "INSERT INTO INTERESTS (username, interest) VALUES ('$username', 'Movies')";
         $stmt = oci_parse($conn, $sql);
         $res = oci_execute($stmt);
     }
-    if(in_array('tvshows', $_POST['interests'])){
-      $sql = "INSERT INTO INTERESTS (username, interest) VALUES ('$username', 'tvshows')";
+    if(in_array('Tv Shows', $_POST['interests'])){
+      $sql = "INSERT INTO INTERESTS (username, interest) VALUES ('$username', 'Tv Shows')";
       $stmt = oci_parse($conn, $sql);
       $res = oci_execute($stmt);
   }
-  if(in_array('podcasts', $_POST['interests'])){
-    $sql = "INSERT INTO INTERESTS (username, interest) VALUES ('$username', 'podcasts')";
+  if(in_array('Podcasts', $_POST['interests'])){
+    $sql = "INSERT INTO INTERESTS (username, interest) VALUES ('$username', 'Podcasts')";
     $stmt = oci_parse($conn, $sql);
     $res = oci_execute($stmt);
   }
-  if(in_array('books', $_POST['interests'])){
-  $sql = "INSERT INTO INTERESTS (username, interest) VALUES ('$username', 'books')";
+  if(in_array('Books', $_POST['interests'])){
+  $sql = "INSERT INTO INTERESTS (username, interest) VALUES ('$username', 'Books')";
   $stmt = oci_parse($conn, $sql);
   $res = oci_execute($stmt);
   }
-  if(in_array('food', $_POST['interests'])){
-    $sql = "INSERT INTO INTERESTS (username, interest) VALUES ('$username', 'food')";
+  if(in_array('Food', $_POST['interests'])){
+    $sql = "INSERT INTO INTERESTS (username, interest) VALUES ('$username', 'Food')";
     $stmt = oci_parse($conn, $sql);
     $res = oci_execute($stmt);
 }
-if(in_array('fashion', $_POST['interests'])){
-  $sql = "INSERT INTO INTERESTS (username, interest) VALUES ('$username', 'fashion')";
+if(in_array('Fashion', $_POST['interests'])){
+  $sql = "INSERT INTO INTERESTS (username, interest) VALUES ('$username', 'Fashion')";
   $stmt = oci_parse($conn, $sql);
   $res = oci_execute($stmt);
 }
-if(in_array('games', $_POST['interests'])){
-  $sql = "INSERT INTO INTERESTS (username, interest) VALUES ('$username', 'games')";
+if(in_array('Games', $_POST['interests'])){
+  $sql = "INSERT INTO INTERESTS (username, interest) VALUES ('$username', 'Games')";
   $stmt = oci_parse($conn, $sql);
   $res = oci_execute($stmt);
 }
