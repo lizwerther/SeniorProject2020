@@ -34,7 +34,7 @@
   </head>
   <body class="text-center">
 <form action="login.php" method="post" class="form-signin">
-  <img class="mb-4" src="./listify 1.png" alt="" width="204" height="77">
+<img class="mb-4" src="./listify 1.png" alt="" width="204" height="77">
   <br>
   <span style="color:red" > <?php
 if(isset($_GET['msg']))
@@ -47,6 +47,12 @@ if(isset($_GET['msg2']))
     $Message = "No account with that username. Try Again";
     print $Message;
 }
+if(isset($_GET['msgunchange']))
+{
+    $Message = "Successfully Changed Your Username";
+    print $Message;
+}
+
 ?></span>
 <div class="main">
   <h1 class="h3 mb-3 font-weight-normal">Log In</h1>
