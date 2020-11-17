@@ -33,19 +33,27 @@ html, body{
     font-family: Verdana,sans-serif;
     font-size: 14px;
 }
+.img{
+
+}
 a.bar-item.button{ 
     color: #ffffff;
 }
 #block1{ 
     height: 300px; 
     background-color:white;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19); 
+    /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);  */
+    border: 1px solid;
+    border-color: #0c2263;
+    /* border-radius: 1.5em; */
     padding: 30px;
     text-align: center;
-    margin-top: 5px;
-    margin-bottom: 30px;
+    margin: 30px;
+    margin-left: 15%;
+    margin-right: 100px;
     font-family: Georgia;
     max-height: 350px;
+    max-width: 70%;
 }
 #block2{ 
     height: auto; 
@@ -76,18 +84,20 @@ ul[title]::before{
     font-family: "Open Sans"; 
     color: black; 
     margin-left: -30;
+    font-variant-caps: all-petite-caps;
 }
 li{
     /* background-color: #white; */
     max-width: inherit;
-    font-variant-caps: all-petite-caps;
+    font-variant-caps: titling-caps;
     color: black;
     /* margin: 20%; */
     align-items: left;
 }
 li::marker{
-    color: black;
-    list-style: dashed;
+    /* color: white;
+    list-style: dashed; */
+    list-style-image: square inside "listify L.png";
 }
 a:link{ 
     color: black;
@@ -127,7 +137,7 @@ a:active{
 
 .top-right{ 
     float: right!important;
-    
+    /* align-items: center; */
 }
 .name{
     font-size: 90;
@@ -138,18 +148,18 @@ a:active{
 }
 .bio{
     font-family: "Ubuntu", sans-serif;
-    margin-left: auto; 
-    margin-right: auto;
-    margin-bottom: 30px;
-    object-position: center;
-    width: 900px; 
+    /* margin: 20px;
+    margin-left: 100px;
+    margin-right: 100px; */
+    /* max-width: 70%; */
+    /* width: 900px;  */
     font-size: 18;
     background-color: royalblue;
     color: white;
     padding: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* border-radius: 1.5em; */
+    text-align: center;
 }
 .sections{
     position: absolute;
@@ -158,9 +168,14 @@ a:active{
     padding: 15px;
 }
 .category{
+    /* padding: 10px;
+    text-decoration: none;
+    color: black; */
     padding: 10px;
     text-decoration: none;
     color: black;
+    text-align: center;
+    font: Tahoma;
 }
 
 .posts{
