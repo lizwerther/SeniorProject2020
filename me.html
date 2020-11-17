@@ -16,15 +16,7 @@
           <a class="bar-item button" href="global.php" >Global</a>
           <!-- <a href="following.html" class="bar-item button">Following</a> -->
           <a href="me.php" class="bar-item button">Me</a>
-          <div class="dropdown">
-            <button class="dropbtn">Me 
-              <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-              <a href="#">Me Page</a>
-              <a href="#">Edit Profile</a>
-            </div>
-          </div> 
+          <a href="editprofile.php" class="bar-item button">Edit Profile</a>
           <a href="index.php" class="bar-item button">Login</a>
           <a href="newpost.php" class="bar-item button">+</a>
       </div>
@@ -35,7 +27,7 @@
                     <p class="bio">hi i'm taylor and i'm so excited to be here! What is an Instagram Bio? Your Instagram bio is the section on your profile page where you include some information about yourself and/or your business. It can be found underneath your Instagram username. In your bio, you can include a short description,</p>
        </div>
        <div id = "block2">
-                    <h2 class="category">My Lists:</h2>
+                    <h2 class="category"><img class="mb-4" src="./Listify L transparent.png" alt="" width="35" height="35">ists:</h2>
                     <!-- liz: can you change css of list to make 2 columns" -->
                     <?php foreach ($categories as $v) { 
                       //echo "<button type=\"button\"> $v </button>
