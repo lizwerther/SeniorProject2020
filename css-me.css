@@ -44,7 +44,7 @@ a.bar-item.button{
 #block1{ 
     height: 300px; 
     /* background-color:white; */
-    background: linear-gradient(to bottom right, #1f4ac9 0%, #DA70D6 110%);
+    background: linear-gradient(to bottom right, #3333CC 0%, #DA70D6 110%);
     /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);  */
     /* border: 1px solid;
     border-color: #0c2263; */
@@ -94,17 +94,18 @@ li{
     /* background-color: #white; */
     max-width: inherit;
     font-variant-caps: titling-caps;
-    color: black;
+    color: gray;
     /* margin: 20%; */
     align-items: left;
 }
 li::marker{
-    /* color: white;
-    list-style: dashed; */
-    list-style-image: square inside "listify L.png";
+    color: white;
+}
+li:hover{
+    text-decoration: none;
 }
 a:link{ 
-    color: black;
+    color: white;
     text-decoration: none; 
 }
 a:visited{ 
@@ -112,9 +113,9 @@ a:visited{
     text-decoration: none;
 }
 a:hover{ 
-    color: black; 
+    color: lightgrey; 
     text-decoration: underline;
-    cursor: pointer;
+    cursor: default;
 }
 a:active{ 
     color: white;
@@ -130,7 +131,7 @@ a:active{
 .button{ 
     vertical-align: middle;
     text-align: center;
-    cursor: pointer;
+    cursor: default;
 }
 /* .button:hover {
     border-color: white;
