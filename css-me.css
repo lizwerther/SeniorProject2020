@@ -60,8 +60,7 @@ a.bar-item.button{
     max-width: 100%;
 }
 #block2{ 
-    height: auto; 
-    background-color: grey; 
+    height: relative;
     background-color:white;
     /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19); */
     border: 1px;
@@ -75,6 +74,9 @@ ul{
     border-color: 6280d9;
     border-radius: 0px;
     border-width: 1.5px;
+    height: 200px;
+    width: 150px;
+    overflow: scroll;
 }
 ul[title]::before{ 
     /* content: attr(title); 
