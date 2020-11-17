@@ -60,7 +60,8 @@ $categories = array_unique($categories);
     <div class="bar">
       <div class="top-left">
           <a class="bar-item button" href="welcomepage.html"> 
-            <b>LIST</b>ify
+            <!-- <b>LIST</b>ify -->
+            <img class="mb-4" src="./listify 1 white.png" alt="" width="100" height="35">
           </a>
       </div>
       <div class="top-right">
