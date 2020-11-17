@@ -33,9 +33,6 @@ html, body{
     font-family: Verdana,sans-serif;
     font-size: 14px;
 }
-.img{
-
-}
 a.bar-item.button{ 
     color: #ffffff;
 }
@@ -49,7 +46,7 @@ a.bar-item.button{
     padding: 30px;
     text-align: center;
     margin: 30px;
-    margin-left: 15%;
+    margin-left: 14%;
     margin-right: 100px;
     font-family: Georgia;
     max-height: 350px;
@@ -145,6 +142,7 @@ a:active{
     text-align: center;
     margin-bottom: 5px;
     max-height: 90px;
+    overflow-wrap: break-word;
 }
 .bio{
     font-family: "Ubuntu", sans-serif;

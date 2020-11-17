@@ -31,7 +31,7 @@
   </head>
   <body class="text-center">
     <form method="post" class="form-signin">
-    <img class="mb-4" src="./listify 1.png" alt="" width="204" height="77">
+    <img class="mb-4" src="./listify 1 white.png" alt="" width="204" height="77">
 <br>
     <span style="color:red" > <?php
 if(isset($_GET['msgusername']))
