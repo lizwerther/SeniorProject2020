@@ -60,7 +60,7 @@ a.bar-item.button{
     max-width: 100%;
 }
 #block2{ 
-    /* height: relative; */
+    height: relative;
     background-color:white;
     /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19); */
     margin: 10px;
@@ -78,13 +78,13 @@ ul{
     /* margin-left: 5%;
     margin-right: 5%; */
     /* margin-top: -15; */
-    border: solid;
+    /* border: solid;
     border-color: 6280d9;
     border-radius: 0px;
-    border-width: 1.5px;
+    border-width: 1.5px; */
     height: 200px;
-    width: 20%;
-    overflow: scroll;
+    width: 200px;
+    /* overflow: scroll; */
     align-content: center;
 }
 ul[title]::before{ 
@@ -100,7 +100,7 @@ ul[title]::before{
     color: black; 
     margin-left: -30;
     font-variant-caps: all-petite-caps;
-    align-items: center;
+
 }
 li{
     /* background-color: #white; */
@@ -198,9 +198,20 @@ a:active{
     font: Tahoma;
 }
 
-.posts{
-    overflow: scroll;
-    height: 100%;
+#posts{
+    /* overflow: scroll; */
+    /* height: 100%; */
+    margin: 20px;
+}
+#posts h2{
+    font-family: Arial, Helvetica, sans-serif;
+}
+#posts p{
+    padding: 10px;
+    border-top: 1px solid darkgray;
+    border-bottom: 1px solid darkgray;
+    border-right: 1px solid darkgray;
+    max-width: 70%
 }
 .section1{
     float: left;
