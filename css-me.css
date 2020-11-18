@@ -206,12 +206,25 @@ a:active{
 #posts h2{
     font-family: Arial, Helvetica, sans-serif;
 }
-#posts p{
+/* .post{
     padding: 10px;
     border-top: 1px solid darkgray;
     border-bottom: 1px solid darkgray;
     border-right: 1px solid darkgray;
     max-width: 70%
+} */
+.postwrap {
+    max-width: 70%;
+    padding: 1rem;
+    position: relative;
+    background: linear-gradient(to bottom right, #3333CC, #DA70D6);
+    padding: 3px;
+  }
+  
+.post {
+    background: white;
+    color: black;
+    padding: 2rem;
 }
 .section1{
     float: left;
