@@ -47,7 +47,7 @@ if(!$conn){
           <img class="mb-4" src="./listify 1 white.png" alt="" width="100" height="35"> 
           </a>
       </div>
-      <div class="top-right" style="font-size:22px">
+      <div class="top-right" style="font-size:22px" style="margin-right:-5px">
           <div class="dropdown">
               <a class ="dropbtn"> Profile
                 <i class="fa fa-caret-down"></i>
@@ -59,7 +59,9 @@ if(!$conn){
                 <a href="index.php">Log Out</a>
               </div>
           </div>
-          
+          <div class="top-right-right" style="margin-left:40px;">
+          <a class="signedin">Signed in: <?php echo "@", $username_old; ?></a>
+        </div>
       </div>
     </div>
       </div>

@@ -297,6 +297,18 @@ h3{
     margin-top:14px;
     /* font-size: 20; */
 }
+.dropdown{ 
+    display: inline-block;
+    margin-right: -55px;
+}
+.top-right-right{ 
+    float:right; 
+    display:inline-block;
+    width:35%;
+    padding-right: 12px;
+    font-size: 8.5px;
+    margin-top: 3px;
+}
 .dropdown-content {
     display: none;
     

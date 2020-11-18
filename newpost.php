@@ -5,6 +5,7 @@ require "conn.php";
 if(!$conn){ 
    echo "connection fail";
 }
+$username = $_SESSION["USER"];
 
 ?>
 <html>
@@ -30,7 +31,9 @@ if(!$conn){
                 <a href="index.php">Log Out</a>
               </div>
           </div>
-          
+          <div class="top-right-right">
+          <a class="signedin">Signed in: <?php echo "@", $username; ?></a>
+        </div>
       </div>
     </div>
       </div>

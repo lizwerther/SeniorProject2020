@@ -52,7 +52,9 @@ foreach($interestArray as $cat){
                 <a href="index.php">Log Out</a>
               </div>
           </div>
-          
+          <div class="top-right-right">
+          <a class="signedin">Signed in: <?php echo "@", $username; ?></a>
+        </div>
       </div>
     </div>
        <div id = "block2">
