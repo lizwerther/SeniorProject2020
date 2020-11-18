@@ -45,7 +45,7 @@ $sql3 = "SELECT * FROM POST WHERE username = '$username' ORDER BY POSTID";
 $s3 = oci_parse($conn, $sql3); 
 oci_execute($s3);
 while ($row = oci_fetch_assoc($s3)){ 
-   $postArray[] = array($row["POSTTITLE"], $row["POSTCATEGORY"], $row["POSTRATING"], $row["POSTCONTENT"], $row["POSTID"]);
+   $postArray[] = array($row["POSTTITLE"], $row["POSTCATEGORY"], $row["POSTRATING"], $row["POSTCONTENT"], $row["POSTID"], $row["USERNAME"]);
    array_push($categories, $row["POSTCATEGORY"]);
 }
 $categories = array_unique($categories);
@@ -78,7 +78,9 @@ $categories = array_unique($categories);
                     <p class="bio"><?php echo $bio; ?></p>
        </div>
        <div id = "block2">
-                    <h2 class="category">My Lists:</h2>
+                    <!--<h2 class="category">My Lists:</h2> -->
+               
+                    
                     <!-- liz: can you change css of list to make 2 columns" -->
                     <?php foreach ($categories as $v) { 
                       //echo "<button type=\"button\"> $v </button>
@@ -92,20 +94,28 @@ $categories = array_unique($categories);
                     }
 
                     ?>
+                
       </div>
+                  <div id="Posts">
                     <h2>Posts:</h2>
-                    <div class= "Posts">
+                    <!-- <div class= "post"> -->
                     
                     <?php
                     foreach ($postArray as $post){ 
-                     echo 
-                    "<p id=\"$post[4]\">
-                    <h2>$post[0]</h2>
+                     echo "<div class= \"postwrap\">
+                     <div class= \"post\">
+                    <p id=\"$post[4]\"> 
                     <p>$post[1]</p>
+                    <h2>$post[0]</h2>
+                    <p>@$post[5]</p>
+                    
                     <p>$post[2]</p>
-                    <p>$post[3]</p>";
+                    <p>$post[3]</p>
+                    </div>
+                    </div>";
                     }
                     ?>            
+                  <!-- </div> -->
                   </div>
     </body>
 </html>

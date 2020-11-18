@@ -69,7 +69,7 @@ a.bar-item.button{
     align-items: center;
 }
 #block2 ul {
-    width: 100px;
+    width: 250px;
     height: 200px;
     background: white;
   }
@@ -133,6 +133,10 @@ a:active{
     color: white;
     text-decoration: underline;
     text-decoration-color: white;
+}
+a.dropbtn{ 
+    text-decoration: underline;
+    color: white; 
 }
 .bar-item{
     padding: 10px;
@@ -258,3 +262,30 @@ h3{
     margin: 0; 
     padding: 0; 
 }
+.top-right{ 
+    margin-right: 50px;
+    margin-top:14px;
+    /* font-size: 20; */
+}
+.dropdown-content {
+    display: none;
+    position: relative;
+    
+    background-color: #f1f1f1;
+    min-width: 160px;
+    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+    z-index: 1;
+}
+  
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+  
+.dropdown-content a:hover {background-color: #ddd;}
+  
+.dropdown:hover .dropdown-content {display: block;}
+  
+.dropdown:hover .dropbtn {background-color:#3333CC;}
