@@ -6,7 +6,6 @@ body {
   font-family: "Trebuchet MS";
   text-align: center;
   align-items: center;
-  overflow: hidden;
 }
 
 body {
@@ -98,8 +97,6 @@ body {
 }
 .interests{
   line-height: 9px;
-  text-align: left;
-  padding-left: 30%;
 }
 .links{ 
   font-size: 12px; 

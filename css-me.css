@@ -2,7 +2,6 @@ html, body{
     font-family: "Ubuntu", sans-serif;
     font-size: 20px;
     margin: 0;
-    overflow-x: hidden;
 }
 .column { 
     float: left; 
@@ -179,15 +178,14 @@ a.dropbtn{
     /* max-width: 70%; */
     /* width: 900px;  */
     font-size: 18;
-    background-color: none;
+    /* background-color: royalblue; */
     color: white;
-    margin-top: 25px;;
     padding: 30px;
-    padding-top: 10px;
+    border: 1px;
+    border-color: black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* border-radius: 1.5em; */
     text-align: center;
-    border-top: 1px solid;
-    border-color: white;
-    /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19); */
 }
 .sections{
     position: absolute;
@@ -309,8 +307,8 @@ h3{
 .top-right-right{ 
     float:right; 
     display:inline-block;
-    width:35%;
-    padding-right: 12px;
+    width:40%;
+    padding-left: 20px;
     font-size: 8.5px;
     margin-top: 3px;
 }

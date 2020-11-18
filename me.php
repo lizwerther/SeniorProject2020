@@ -1,9 +1,13 @@
 <?php
+is(isset($_GET['USER'])){
 session_start();
-$username = $_SESSION["USER"];
+//$_GET["USER"];
+$username = $_GET["USER"];
 //echo $username; 
 
 require "conn.php"; 
+require "navbar.php";
+}
 $conn = oci_connect('asheerin', 'sP01397995', 'csdb2.csc.Villanova.edu:1521/orcl.villanova.edu');
 $query = "SELECT * FROM PROFILES WHERE username='$username'";
 //echo $query;
@@ -84,7 +88,7 @@ $categories = array_unique($categories);
       <div id = "block1">
                     <h2 class = "name"><?php echo $name, " "; echo $lname; ?></h2>
                     <h3 class = "username"><?php echo "@", $username; ?></h3>
-                    <p class="bio"><?php echo $bio; ?></p>
+                    <div class="bio"><?php echo $bio; ?></div>
        </div>
        <div id = "block2">
                     <!--<h2 class="category">My Lists:</h2> -->
