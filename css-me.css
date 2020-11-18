@@ -300,12 +300,13 @@ h3{
 .dropdown{ 
     display: inline-block;
     margin-right: -55px;
+    position:absolute;
 }
 .top-right-right{ 
     float:right; 
     display:inline-block;
-    width:35%;
-    padding-right: 12px;
+    width:40%;
+    padding-left: 20px;
     font-size: 8.5px;
     margin-top: 3px;
 }

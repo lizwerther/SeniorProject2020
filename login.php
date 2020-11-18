@@ -23,8 +23,9 @@ if(isset($_POST["submit"])){
             $db_username = $row[3]; 
 
             if($username == $db_username && password_verify($password, $db_password)){ 
+                
                 $_SESSION["USER"] = $username; 
-                header("Location: me.php");
+                header("Location: me.php?username=$username");
                 echo "You are in!!";
                 exit;
             }

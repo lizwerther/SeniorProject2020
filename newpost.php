@@ -25,9 +25,9 @@ $username = $_SESSION["USER"];
                 <i class="fa fa-caret-down"></i>
 </a>
               <div class="dropdown-content">
-                <a href="me.php">Profile Page</a>
-                <a href="newpost.php">New Post</a>
-                <a href="editprofile.php">Edit Profile</a>
+              <a href="me.php?username=<?php echo$username?>">Profile Page</a>
+                <a href="newpost.php?username=<?php echo$username?>">New Post</a>
+                <a href="editprofile.php?username=<?php echo$username?>">Edit Profile</a>
                 <a href="index.php">Log Out</a>
               </div>
           </div>

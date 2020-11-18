@@ -1,9 +1,12 @@
 <?php
+//$_GET["USER"];
 session_start();
+//$_GET["USER"];
 $username = $_SESSION["USER"];
 //echo $username; 
 
 require "conn.php"; 
+require "navbar.php";
 $conn = oci_connect('asheerin', 'sP01397995', 'csdb2.csc.Villanova.edu:1521/orcl.villanova.edu');
 $query = "SELECT * FROM PROFILES WHERE username='$username'";
 //echo $query;
@@ -58,29 +61,6 @@ $categories = array_unique($categories);
   </head>  
   <body>
       
-    <div class="bar">
-      <div class="top-left">
-          <a class="bar-item button" href="global.php">
-          <img class="mb-4" src="./listify 1 white.png" alt="" width="100" height="35"> 
-          </a>
-      </div>
-      <div class="top-right">
-          <div class="dropdown">
-              <a class ="dropbtn"> Profile
-                <i class="fa fa-caret-down"></i>
-</a>
-              <div class="dropdown-content">
-                <a href="me.php">Profile Page</a>
-                <a href="newpost.php">New Post</a>
-                <a href="editprofile.php">Edit Profile</a>
-                <a href="index.php">Log Out</a>
-              </div>
-          </div>
-          <div class="top-right-right">
-          <a class="signedin">Signed in: <?php echo "@", $username; ?></a>
-        </div>
-      </div>
-    </div>
       <div id = "block1">
                     <h2 class = "name"><?php echo $name, " "; echo $lname; ?></h2>
                     <h3 class = "username"><?php echo "@", $username; ?></h3>

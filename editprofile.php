@@ -1,8 +1,9 @@
 <?php
 session_start();
-$username_old = $_SESSION["USER"];
+$username = $_SESSION["USER"];
 $conn = oci_connect('asheerin', 'sP01397995', 'csdb2.csc.Villanova.edu:1521/orcl.villanova.edu');
 require "conn.php"; 
+//require "navbar.php";
 if(!$conn){ 
      echo "connection fail";
 }
@@ -47,8 +48,8 @@ if(!$conn){
           <img class="mb-4" src="./listify 1 white.png" alt="" width="100" height="35"> 
           </a>
       </div>
-      <div class="top-right" style="font-size:22px" style="margin-right:-5px">
-          <div class="dropdown">
+      <div class="top-right" style="font-size:22px; margin-right:20px; margin-left:40px;">
+          <div class="dropdown" style="margin-left:-70px;">
               <a class ="dropbtn"> Profile
                 <i class="fa fa-caret-down"></i>
 </a>
@@ -60,7 +61,7 @@ if(!$conn){
               </div>
           </div>
           <div class="top-right-right" style="margin-left:40px;">
-          <a class="signedin">Signed in: <?php echo "@", $username_old; ?></a>
+          <a class="signedin">Signed in: <?php echo "@", $username; ?></a>
         </div>
       </div>
     </div>
@@ -87,13 +88,13 @@ if(!$conn){
 
   <p>Please select all of your new interests!</p>
     <div class="interests">
-    Movies: <input type="checkbox" name="interests[]" value="movies"  /><br />
-    TV Shows: <input type="checkbox" name="interests[]" value="tvshows"  /><br /> 
-    Podcasts: <input type="checkbox" name="interests[]" value="podcasts"  /><br /> 
-    Books: <input type="checkbox" name="interests[]" value="books"  /><br />
-    Food: <input type="checkbox" name="interests[]" value="food"  /><br /> 
-    Fashion: <input type="checkbox" name="interests[]" value="fashion"  /><br /> 
-    Games: <input type="checkbox" name="interests[]" value="games"  /><br /> 
+    Movies: <input type="checkbox" name="interests[]" value="Movies"  /><br />
+    TV Shows: <input type="checkbox" name="interests[]" value="Tv Shows"  /><br /> 
+    Podcasts: <input type="checkbox" name="interests[]" value="Podcasts"  /><br /> 
+    Books: <input type="checkbox" name="interests[]" value="Books"  /><br />
+    Food: <input type="checkbox" name="interests[]" value="Food"  /><br /> 
+    Fashion: <input type="checkbox" name="interests[]" value="Fashion"  /><br /> 
+    Games: <input type="checkbox" name="interests[]" value="Games"  /><br /> 
     </div>
   <button type="submit" class="btn btn-lg btn-primary btn-block" name="EditInterests">Edit</button>
   <!--<p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p> -->
@@ -118,7 +119,7 @@ if(isset($_POST["EditUsername"])){
         }
   }
   else{ 
-      $sql = "UPDATE PROFILES SET USERNAME = '$username_new' WHERE USERNAME= '$username_old'";
+      $sql = "UPDATE PROFILES SET USERNAME = '$username_new' WHERE USERNAME= '$username'";
       $stmt2 = oci_parse($conn, $sql);
       $res2 = oci_execute($stmt2);
       session_destroy(); 
@@ -128,47 +129,47 @@ if(isset($_POST["EditUsername"])){
 
 if(isset($_POST["EditBio"])){ 
     $bio_new = $_POST["bio_new"]; 
-    $sql = "UPDATE PROFILES SET bio = '$bio_new' WHERE USERNAME= '$username_old'";
+    $sql = "UPDATE PROFILES SET bio = '$bio_new' WHERE USERNAME= '$username'";
     $stmt2 = oci_parse($conn, $sql);
     $res2 = oci_execute($stmt2);
 }
 if(isset($_POST["EditInterests"])){ 
-    $sql = "DELETE FROM INTERESTS WHERE USERNAME= '$username_old'";
+    $sql = "DELETE FROM INTERESTS WHERE USERNAME= '$username'";
     $stmt = oci_parse($conn, $sql);
     $res = oci_execute($stmt);
 
-    if(in_array('movies', $_POST['interests'])){
-        $sql = "INSERT INTO INTERESTS (username, interest) VALUES ('$username_old', 'movies')";
+    if(in_array('Movies', $_POST['interests'])){
+        $sql = "INSERT INTO INTERESTS (username, interest) VALUES ('$username', 'Movies')";
         $stmt = oci_parse($conn, $sql);
         $res = oci_execute($stmt);
     }
-    if(in_array('tvshows', $_POST['interests'])){
-      $sql = "INSERT INTO INTERESTS (username, interest) VALUES ('$username_old', 'tvshows')";
+    if(in_array('Tv Shows', $_POST['interests'])){
+      $sql = "INSERT INTO INTERESTS (username, interest) VALUES ('$username', 'Tv Shows')";
       $stmt = oci_parse($conn, $sql);
       $res = oci_execute($stmt);
   }
-    if(in_array('podcasts', $_POST['interests'])){
-    $sql = "INSERT INTO INTERESTS (username, interest) VALUES ('$username_old', 'podcasts')";
+    if(in_array('Podcasts', $_POST['interests'])){
+    $sql = "INSERT INTO INTERESTS (username, interest) VALUES ('$username', 'Podcasts')";
     $stmt = oci_parse($conn, $sql);
     $res = oci_execute($stmt);
   }
-    if(in_array('books', $_POST['interests'])){
-    $sql = "INSERT INTO INTERESTS (username, interest) VALUES ('$username_old', 'books')";
+    if(in_array('Books', $_POST['interests'])){
+    $sql = "INSERT INTO INTERESTS (username, interest) VALUES ('$username', 'Books')";
     $stmt = oci_parse($conn, $sql);
     $res = oci_execute($stmt);
   }
-    if(in_array('food', $_POST['interests'])){
-    $sql = "INSERT INTO INTERESTS (username, interest) VALUES ('$username_old', 'food')";
+    if(in_array('Food', $_POST['interests'])){
+    $sql = "INSERT INTO INTERESTS (username, interest) VALUES ('$username', 'Food')";
     $stmt = oci_parse($conn, $sql);
     $res = oci_execute($stmt);
 }
-    if(in_array('fashion', $_POST['interests'])){
-    $sql = "INSERT INTO INTERESTS (username, interest) VALUES ('$username_old', 'fashion')";
+    if(in_array('Fashion', $_POST['interests'])){
+    $sql = "INSERT INTO INTERESTS (username, interest) VALUES ('$username', 'Fashion')";
     $stmt = oci_parse($conn, $sql);
     $res = oci_execute($stmt);
 }
-    if(in_array('games', $_POST['interests'])){
-    $sql = "INSERT INTO INTERESTS (username, interest) VALUES ('$username_old', 'games')";
+    if(in_array('Games', $_POST['interests'])){
+    $sql = "INSERT INTO INTERESTS (username, interest) VALUES ('$username', 'Games')";
     $stmt = oci_parse($conn, $sql);
     $res = oci_execute($stmt);
 }

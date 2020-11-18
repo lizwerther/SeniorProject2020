@@ -16,8 +16,8 @@ while ($row = oci_fetch_assoc($s4)) {
 
 $allposts = Array(); 
 foreach($interestArray as $cat){ 
-    
-    $query = "SELECT * FROM Post WHERE postcategory = '".$cat."'";
+  echo $cat;
+    $query = "SELECT * FROM Post WHERE postcategory = '$cat'";
     $s = oci_parse($conn, $query);
     oci_execute($s);
     while ($row = oci_fetch_assoc($s)){ 
@@ -31,6 +31,7 @@ foreach($interestArray as $cat){
 <html>
     <head>
         <link rel="stylesheet" type:"text/css" href="css-me.css">
+        <link rel="stylesheet" type:"text/css" href="navbar.css">
   </head>  
   <body>
       
@@ -46,10 +47,11 @@ foreach($interestArray as $cat){
                 <i class="fa fa-caret-down"></i>
 </a>
               <div class="dropdown-content">
-                <a href="me.php">Profile Page</a>
-                <a href="newpost.php">New Post</a>
-                <a href="editprofile.php">Edit Profile</a>
+              <a href="me.php?username=<?php echo$username?>">Profile Page</a>
+                <a href="newpost.php?username=<?php echo$username?>">New Post</a>
+                <a href="editprofile.php?username=<?php echo$username?>">Edit Profile</a>
                 <a href="index.php">Log Out</a>
+                
               </div>
           </div>
           <div class="top-right-right">
@@ -80,7 +82,8 @@ foreach($interestArray as $cat){
                      echo 
                     "<p id=\"$post[4]\">
                     <h2>$post[1]</h2>
-                    <p>by: $post[0]</p>
+                    <p>
+                    by: $post[0]</p>
                     <p>$post[2]</p>
                     <p>$post[3]</p>";
                     }
