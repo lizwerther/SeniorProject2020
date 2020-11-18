@@ -60,21 +60,14 @@ a.bar-item.button{
     max-width: 100%;
 }
 #block2{ 
-    height: relative;
+    /* height: relative; */
     background-color:white;
     /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19); */
-    border: 1px;
-    border-color: black;
     margin: 10px;
-}
-#block2 h2{
-    display: outside;
-}
-#block2 {
-    /* border: 10px solid black; */
     display: flex;
     justify-content: space-between;
-  }
+    align-items: center;
+}
 #block2 ul {
     width: 100px;
     height: 200px;
@@ -82,15 +75,15 @@ a.bar-item.button{
   }
 ul{ 
     display: inline-table;
-    margin-left: 5%;
-    margin-right: 5%;
+    /* margin-left: 5%;
+    margin-right: 5%; */
     /* margin-top: -15; */
     border: solid;
     border-color: 6280d9;
     border-radius: 0px;
     border-width: 1.5px;
     height: 200px;
-    width: 300px;
+    width: 20%;
     overflow: scroll;
     align-content: center;
 }
