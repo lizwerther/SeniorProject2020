@@ -38,25 +38,31 @@
                      <ul title = Books>
                       <a href=\"#$post[4]\"> <li> $post[0] </li></a>
                      </ul>
+                     <ul title = Books>
+                      <a href=\"#$post[4]\"> <li> $post[0] </li></a>
+                     </ul>
                     <ul title = Podcasts
                       "<a href=\"#$post[4]\"> <li> $post[0] </li></a>
                     </ul>
 
                     
       </div>
+                  <div id="Posts">
                     <h2>Posts:</h2>
-                    <div class= "Posts">
+                    <div class="postwrap">
+                    <div class= "post">
                     
                     <?php
                     foreach ($postArray as $post){ 
                      echo 
-                    "<p id=\"$post[4]\">
-                    <h2>$post[0]</h2>
-                    <p>$post[1]</p>
-                    <p>$post[2]</p>
-                    <p>$post[3]</p>";
-                    }
-                    ?>            
+                    "<p id=\"$post[4]\"> 
+                        <div class="cat">$post[1]</div>
+                        <h2>$post[0]</h2>
+                        <div class="un">@$post[5]</div>
+                        <div class="rate">$post[2]</div>
+                        <div class="content">$post[3]</div>            
+                    </div>
+                    </div>
                   </div>
     </body>
 </html>
