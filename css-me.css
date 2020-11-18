@@ -76,12 +76,12 @@ a.bar-item.button{
     justify-content: space-between;
   }
 #block2 ul {
-    width: fit-content;
+    width: 100px;
     height: 200px;
     background: white;
   }
 ul{ 
-    /* display: inline-table; */
+    display: inline-table;
     margin-left: 5%;
     margin-right: 5%;
     /* margin-top: -15; */
