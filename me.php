@@ -54,22 +54,29 @@ $categories = array_unique($categories);
 <html>
     <head>
         <link rel="stylesheet" type:"text/css" href="css-me.css">
+        <link rel="stylesheet" type:"text/css" href="navbar.css">
   </head>  
   <body>
       
     <div class="bar">
       <div class="top-left">
-          <a class="bar-item button" href="welcomepage.html"> 
-            <!-- <b>LIST</b>ify -->
-            <img class="mb-4" src="./listify 1 white.png" alt="" width="100" height="35">
+          <a class="bar-item button" href="global.php">
+          <img class="mb-4" src="./listify 1 white.png" alt="" width="100" height="35"> 
           </a>
       </div>
       <div class="top-right">
-          <a class="bar-item button" href="global.php" >Global</a>
-          <!-- <a href="following.html" class="bar-item button">Following</a> -->
-          <a href="me.php" class="bar-item button">Me</a>
-          <a href="index.php" class="bar-item button">Login</a>
-          <a href="newpost.php" class="bar-item button">+</a>
+          <div class="dropdown">
+              <a class ="dropbtn"> Profile
+                <i class="fa fa-caret-down"></i>
+</a>
+              <div class="dropdown-content">
+                <a href="me.php">Profile Page</a>
+                <a href="newpost.php">New Post</a>
+                <a href="editprofile.php">Edit Profile</a>
+                <a href="index.php">Log Out</a>
+              </div>
+          </div>
+          
       </div>
     </div>
       <div id = "block1">
@@ -105,12 +112,12 @@ $categories = array_unique($categories);
                      echo "<div class= \"postwrap\">
                      <div class= \"post\">
                     <p id=\"$post[4]\"> 
-                    <p>$post[1]</p>
+                    <div class=\"cat\">$post[1]</div>
                     <h2>$post[0]</h2>
-                    <p>@$post[5]</p>
+                    <div class=\"un\">@$post[5]</div>
                     
-                    <p>$post[2]</p>
-                    <p>$post[3]</p>
+                    <div class=\"rate\">$post[2]</div>
+                    <div class=\"content\">$post[3]</div>
                     </div>
                     </div>";
                     }
