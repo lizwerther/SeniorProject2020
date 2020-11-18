@@ -16,7 +16,7 @@ while ($row = oci_fetch_assoc($s4)) {
 
 $allposts = Array(); 
 foreach($interestArray as $cat){ 
-  echo $cat;
+  //echo $cat;
     $query = "SELECT * FROM Post WHERE postcategory = '$cat'";
     $s = oci_parse($conn, $query);
     oci_execute($s);
