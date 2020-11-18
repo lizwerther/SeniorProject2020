@@ -207,10 +207,13 @@ a.dropbtn{
     /* overflow: scroll; */
     /* height: 100%; */
     margin: 20px;
+    font-size: 25;
+    font-family: 'Futura Light', serif;
 }
-.posts h2{
-    font-family: Arial, Helvetica, sans-serif;
+#posts h2{
+    margin-bottom: 25px;
 }
+
 /* .post{
     padding: 10px;
     border-top: 1px solid darkgray;
@@ -234,9 +237,10 @@ a.dropbtn{
     padding-bottom: 10px;
 }
 /* .post p{
-    margin: 5px;
+    margin: 15px;
 } */
 .post h2{
+    margin-bottom: 10px;
     font-family: Times, serif;
     font-size: 45;
     padding: 4px;
