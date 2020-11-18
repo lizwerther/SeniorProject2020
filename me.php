@@ -68,7 +68,7 @@ $categories = array_unique($categories);
           <div class="dropdown">
               <a class ="dropbtn"> Profile
                 <i class="fa fa-caret-down"></i>
-</a>
+              </a>
               <div class="dropdown-content">
                 <a href="me.php">Profile Page</a>
                 <a href="newpost.php">New Post</a>
