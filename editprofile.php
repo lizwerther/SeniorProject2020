@@ -35,13 +35,37 @@ if(!$conn){
       }
     </style>
     <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
+    <link rel="stylesheet" type:"text/css" href="navbar.css"> 
+    <link rel="stylesheet" type:"text/css" href="css-me.css">
+   <link rel="stylesheet" type:"text/css" href="sign-in.css"> 
     <!-- <link href="css.css" rel="stylesheet"> -->
   </head>
-  <body class="text-center">
-    <form method="post" class="form-signin">
-    <img class="mb-4" src="./ListifyLogo.png" alt="" width="72" height="72">
-
+  <body style="height=150%">
+    <div class="bar" style="margin-top:-40px">
+      <div class="top-left">
+          <a class="bar-item button" href="global.php">
+          <img class="mb-4" src="./listify 1 white.png" alt="" width="100" height="35"> 
+          </a>
+      </div>
+      <div class="top-right" style="font-size:22px">
+          <div class="dropdown">
+              <a class ="dropbtn"> Profile
+                <i class="fa fa-caret-down"></i>
+</a>
+              <div class="dropdown-content" style="font-size:14px">
+                <a href="me.php">Profile Page</a>
+                <a href="newpost.php">New Post</a>
+                <a href="editprofile.php">Edit Profile</a>
+                <a href="index.php">Log Out</a>
+              </div>
+          </div>
+          
+      </div>
+    </div>
+      </div>
+      <form method="post" class="form-signin">
+      <div class="text-center">  
+      <!-- <form method="post" class="form-signin"> -->
   <div class="main" >
 
   <h1 class="h3 mb-3 font-weight-normal">Edit Profile</h1>
@@ -73,6 +97,7 @@ if(!$conn){
   <!--<p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p> -->
 </div>
 </form>
+    </div>
 </body>
 </html>
 
