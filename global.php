@@ -59,8 +59,14 @@ foreach($interestArray as $cat){
         </div>
       </div>
     </div>
+    <div id="block1"> 
+        <br>
+        <h2 class = "name">Global Page</h2> 
+        <p style="color:white">SEE WHAT'S TRENDING NOW</p>
+      </div>
        <div id = "block2">
-                    <h2 class="category">Interests:</h2>
+                    <!-- <h2 class="category"></h2> -->
+      
                     <?php foreach ($interestArray as $v) { 
                       //echo "<button type=\"button\"> $v </button>
                       echo "<ul title = \"$v\">";
@@ -74,18 +80,25 @@ foreach($interestArray as $cat){
 
                     ?>
       </div>
+                    <div id="Posts">
                     <h2>Posts:</h2>
-                    <div class= "Posts">
                     
                     <?php
                     foreach ($allposts as $post){ 
                      echo 
-                    "<p id=\"$post[4]\">
-                    <h2>$post[1]</h2>
-                    <p>
-                    by: $post[0]</p>
-                    <p>$post[2]</p>
-                    <p>$post[3]</p>";
+                    "<center>
+                    <div class= \"postwrap\">
+                    <div class= \"post\">
+                    <p id=\"$post[5]\">
+                    <div class=\"cat\">$post[2]</div>
+                    <h2 style=\"padding: 0px\">$post[1]</h2>
+                    <div class=\"un\">@$post[0]</div>
+                    
+                    <div class=\"rate\">$post[3]</div>
+                    <div class=\"content\">$post[4]</div>
+                    </div>
+                    </div>
+                    </center>";
                     }
                     ?>            
                   </div>

@@ -1,13 +1,13 @@
 <?php
-is(isset($_GET['USER'])){
+//is(isset($_GET['USER'])){
 session_start();
 //$_GET["USER"];
-$username = $_GET["USER"];
+$username = $_SESSION["USER"];
 //echo $username; 
 
 require "conn.php"; 
-require "navbar.php";
-}
+//require "navbar.php";
+//}
 $conn = oci_connect('asheerin', 'sP01397995', 'csdb2.csc.Villanova.edu:1521/orcl.villanova.edu');
 $query = "SELECT * FROM PROFILES WHERE username='$username'";
 //echo $query;
@@ -115,7 +115,9 @@ $categories = array_unique($categories);
                     
                     <?php
                     foreach ($postArray as $post){ 
-                     echo "<div class= \"postwrap\">
+                     echo "
+                     <center>
+                     <div class= \"postwrap\">
                      <div class= \"post\">
                     <p id=\"$post[4]\"> 
                     <div class=\"cat\">$post[1]</div>
@@ -125,7 +127,8 @@ $categories = array_unique($categories);
                     <div class=\"rate\">$post[2]</div>
                     <div class=\"content\">$post[3]</div>
                     </div>
-                    </div>";
+                    </div>
+                    <center>";
                     }
                     ?>            
                   <!-- </div> -->
