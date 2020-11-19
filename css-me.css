@@ -203,15 +203,16 @@ a.dropbtn{
     text-align: center;
     font: Tahoma;
 }
-#posts{
+.posts{
     /* overflow: scroll; */
     /* height: 100%; */
-    margin: 20px;
+    margin-left: 20px;
     font-size: 25;
     font-family: 'Futura Light', serif;
 }
 #posts h2{
     margin-bottom: 25px;
+    margin-left: 25px;
 }
 
 /* .post{
@@ -227,6 +228,7 @@ a.dropbtn{
     position: relative;
     background: linear-gradient(to bottom right, #3333CC, #DA70D6);
     padding: 3px;
+    margin: 20px;
   }
   
 .post {
@@ -247,6 +249,7 @@ a.dropbtn{
     padding-top: 10px;
     padding-bottom: 10px;
     text-align: center;
+    margin-left: none;
 }
 .cat{
     text-align: left;
